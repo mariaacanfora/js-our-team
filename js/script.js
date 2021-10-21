@@ -38,6 +38,7 @@ for (let i = 0; i < names.length; i++) {
 
 
 addBtn.addEventListener("click", function(){
+
     member.name = document.getElementById("name").value;
     //console.log(newMemberName);
     member.role = document.getElementById("role").value;
@@ -50,9 +51,23 @@ addBtn.addEventListener("click", function(){
     
     createCard(member);
 
+    //resetto valori dopo aver inserito il nuovo membro
+    document.getElementById("name").value = "";
+    document.getElementById("role").value = "";
+    document.getElementById("image").value = "";
 })
 
 
+
+/***************************************************/
+/* FUNCTIONS */
+/***************************************************/
+
+/**
+ * Crea la card del membro dello staff 
+ * 
+ * @param {object} currentMember - oggetto con porietà name, imgSrc, imgAlt e role
+ */
 function createCard(currentMember){
      
     const teamCard = document.createElement("div");
